@@ -1,0 +1,119 @@
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.1</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <script src="https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190"></script><script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <script type="text/javascript" src="./js/cookie.js"></script>
+    
+  <link id="layuicss-laydate" rel="stylesheet" href="http://127.0.0.1:8020/houtaimuban/X-admin/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9" media="all"><link id="layuicss-layer" rel="stylesheet" href="http://127.0.0.1:8020/houtaimuban/X-admin/lib/layui/css/modules/layer/default/layer.css?v=3.1.1" media="all"></head>
+  
+  <body class="" style="">
+    <div class="x-nav">
+      <span class="layui-breadcrumb" style="visibility: visible;">
+        <a href="">首页</a><span lay-separator="">/</span>
+        <a href="">演示</a><span lay-separator="">/</span>
+        <a>
+          <cite>导航元素</cite></a>
+      </span>
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+    </div>
+    <div class="x-body">
+      <div class="layui-row">
+        <form class="layui-form layui-col-md12 x-so">
+          <input class="layui-input" autocomplete="off" placeholder="开始日" name="start" id="start" lay-key="1">
+          <input class="layui-input" autocomplete="off" placeholder="截止日" name="end" id="end" lay-key="2">
+          <input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+          <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon"></i></button>
+        </form>
+      </div>
+      <table class="layui-table" lay-data="{url:'./user.json',page:true,toolbar: '#toolbarDemo',id:'test'}" lay-filter="test">
+        <thead>
+          <tr>
+            <th lay-data="{type:'checkbox'}">ID</th>
+            <th lay-data="{field:'id', width:80, sort: true}">ID</th>
+            <th lay-data="{field:'username', width:120, sort: true, edit: 'text'}">用户名</th>
+            <th lay-data="{field:'email', edit: 'text', minWidth: 150}">邮箱</th>
+            <th lay-data="{field:'sex', width:80,templet: '#switchTpl'}">性别</th>
+            <th lay-data="{field:'city', edit: 'text', minWidth: 100}">城市</th>
+            <th lay-data="{field:'experience', sort: true, edit: 'text'}">积分</th>
+            <th lay-data="{field:'dw_xinzhi',templet: function(d){ return d.dw_xinzhi.titel;}}">学校</th>
+          </tr>
+        </thead>
+      </table><div class="layui-form layui-border-box layui-table-view" lay-filter="LAY-table-1" lay-id="test" style=" "><div class="layui-table-tool"><div class="layui-table-tool-temp"> <div class="layui-btn-container"> <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button> <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button> <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button> </div> </div><div class="layui-table-tool-self"><div class="layui-inline" title="筛选列" lay-event="LAYTABLE_COLS"><i class="layui-icon layui-icon-cols"></i></div><div class="layui-inline" title="导出" lay-event="LAYTABLE_EXPORT"><i class="layui-icon layui-icon-export"></i></div><div class="layui-inline" title="打印" lay-event="LAYTABLE_PRINT"><i class="layui-icon layui-icon-print"></i></div></div></div><div class="layui-table-box"><div class="layui-table-header"><table class="layui-table" cellspacing="0" cellpadding="0" border="0"><thead><tr><th data-field="0" data-key="1-0-0" data-unresize="true" class=" layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary" lay-filter="layTableAllChoose"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></th><th data-field="id" data-key="1-0-1" class=" layui-unselect"><div class="layui-table-cell laytable-cell-1-0-1"><span>ID</span><span class="layui-table-sort layui-inline"><i class="layui-edge layui-table-sort-asc" title="升序"></i><i class="layui-edge layui-table-sort-desc" title="降序"></i></span></div></th><th data-field="username" data-key="1-0-2" class=" layui-unselect"><div class="layui-table-cell laytable-cell-1-0-2"><span>用户名</span><span class="layui-table-sort layui-inline"><i class="layui-edge layui-table-sort-asc" title="升序"></i><i class="layui-edge layui-table-sort-desc" title="降序"></i></span></div></th><th data-field="email" data-key="1-0-3" data-minwidth="150" class=""><div class="layui-table-cell laytable-cell-1-0-3"><span>邮箱</span></div></th><th data-field="sex" data-key="1-0-4" class=""><div class="layui-table-cell laytable-cell-1-0-4"><span>性别</span></div></th><th data-field="city" data-key="1-0-5" data-minwidth="100" class=""><div class="layui-table-cell laytable-cell-1-0-5"><span>城市</span></div></th><th data-field="experience" data-key="1-0-6" class=" layui-unselect"><div class="layui-table-cell laytable-cell-1-0-6"><span>积分</span><span class="layui-table-sort layui-inline"><i class="layui-edge layui-table-sort-asc" title="升序"></i><i class="layui-edge layui-table-sort-desc" title="降序"></i></span></div></th><th data-field="dw_xinzhi" data-key="1-0-7" class=""><div class="layui-table-cell laytable-cell-1-0-7"><span>学校</span></div></th></tr></thead></table></div><div class="layui-table-body layui-table-main"><table class="layui-table" cellspacing="0" cellpadding="0" border="0"><tbody><tr data-index="0" class=""><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="id" data-key="1-0-1" class=""><div class="layui-table-cell laytable-cell-1-0-1">10001</div></td><td data-field="username" data-key="1-0-2" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-2">杜甫</div></td><td data-field="email" data-key="1-0-3" data-edit="text" data-minwidth="150" class=""><div class="layui-table-cell laytable-cell-1-0-3">xianxin@layui.com</div></td><td data-field="sex" data-key="1-0-4" data-content="男" class=""><div class="layui-table-cell laytable-cell-1-0-4"> <!-- 这里的 checked 的状态只是演示 --> <input type="checkbox" name="sex" value="10001" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>男</em><i></i></div> </div></td><td data-field="city" data-key="1-0-5" data-edit="text" data-minwidth="100" class=""><div class="layui-table-cell laytable-cell-1-0-5">浙江杭州</div></td><td data-field="experience" data-key="1-0-6" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-6">116</div></td><td data-field="dw_xinzhi" data-key="1-0-7" data-content="[object Object]" class=""><div class="layui-table-cell laytable-cell-1-0-7">小学</div></td></tr><tr data-index="1" class=""><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary" checked=""><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="id" data-key="1-0-1" class=""><div class="layui-table-cell laytable-cell-1-0-1">10002</div></td><td data-field="username" data-key="1-0-2" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-2">李白</div></td><td data-field="email" data-key="1-0-3" data-edit="text" data-minwidth="150" class=""><div class="layui-table-cell laytable-cell-1-0-3">xianxin@layui.com</div></td><td data-field="sex" data-key="1-0-4" data-content="男" class=""><div class="layui-table-cell laytable-cell-1-0-4"> <!-- 这里的 checked 的状态只是演示 --> <input type="checkbox" name="sex" value="10002" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>男</em><i></i></div> </div></td><td data-field="city" data-key="1-0-5" data-edit="text" data-minwidth="100" class=""><div class="layui-table-cell laytable-cell-1-0-5">浙江杭州</div></td><td data-field="experience" data-key="1-0-6" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-6">12</div></td><td data-field="dw_xinzhi" data-key="1-0-7" data-content="[object Object]" class=""><div class="layui-table-cell laytable-cell-1-0-7">小学</div></td></tr><tr data-index="2"><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="id" data-key="1-0-1" class=""><div class="layui-table-cell laytable-cell-1-0-1">10003</div></td><td data-field="username" data-key="1-0-2" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-2">王勃</div></td><td data-field="email" data-key="1-0-3" data-edit="text" data-minwidth="150" class=""><div class="layui-table-cell laytable-cell-1-0-3">xianxin@layui.com</div></td><td data-field="sex" data-key="1-0-4" data-content="男" class=""><div class="layui-table-cell laytable-cell-1-0-4"> <!-- 这里的 checked 的状态只是演示 --> <input type="checkbox" name="sex" value="10003" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo" checked=""><div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>女</em><i></i></div> </div></td><td data-field="city" data-key="1-0-5" data-edit="text" data-minwidth="100" class=""><div class="layui-table-cell laytable-cell-1-0-5">浙江杭州</div></td><td data-field="experience" data-key="1-0-6" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-6">65</div></td><td data-field="dw_xinzhi" data-key="1-0-7" data-content="[object Object]" class=""><div class="layui-table-cell laytable-cell-1-0-7">小学</div></td></tr><tr data-index="3" class=""><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="id" data-key="1-0-1" class=""><div class="layui-table-cell laytable-cell-1-0-1">10004</div></td><td data-field="username" data-key="1-0-2" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-2">李清照</div></td><td data-field="email" data-key="1-0-3" data-edit="text" data-minwidth="150" class=""><div class="layui-table-cell laytable-cell-1-0-3">xianxin@layui.com</div></td><td data-field="sex" data-key="1-0-4" data-content="女" class=""><div class="layui-table-cell laytable-cell-1-0-4"> <!-- 这里的 checked 的状态只是演示 --> <input type="checkbox" name="sex" value="10004" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>男</em><i></i></div> </div></td><td data-field="city" data-key="1-0-5" data-edit="text" data-minwidth="100" class=""><div class="layui-table-cell laytable-cell-1-0-5">浙江杭州</div></td><td data-field="experience" data-key="1-0-6" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-6">666</div></td><td data-field="dw_xinzhi" data-key="1-0-7" data-content="[object Object]" class=""><div class="layui-table-cell laytable-cell-1-0-7">小学</div></td></tr><tr data-index="4" class=""><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="id" data-key="1-0-1" class=""><div class="layui-table-cell laytable-cell-1-0-1">10005</div></td><td data-field="username" data-key="1-0-2" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-2">冰心</div></td><td data-field="email" data-key="1-0-3" data-edit="text" data-minwidth="150" class=""><div class="layui-table-cell laytable-cell-1-0-3">xianxin@layui.com</div></td><td data-field="sex" data-key="1-0-4" data-content="女" class=""><div class="layui-table-cell laytable-cell-1-0-4"> <!-- 这里的 checked 的状态只是演示 --> <input type="checkbox" name="sex" value="10005" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>男</em><i></i></div> </div></td><td data-field="city" data-key="1-0-5" data-edit="text" data-minwidth="100" class=""><div class="layui-table-cell laytable-cell-1-0-5">浙江杭州</div></td><td data-field="experience" data-key="1-0-6" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-6">86</div></td><td data-field="dw_xinzhi" data-key="1-0-7" data-content="[object Object]" class=""><div class="layui-table-cell laytable-cell-1-0-7">小学</div></td></tr><tr data-index="5" class=""><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="id" data-key="1-0-1" class=""><div class="layui-table-cell laytable-cell-1-0-1">10006</div></td><td data-field="username" data-key="1-0-2" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-2">贤心</div></td><td data-field="email" data-key="1-0-3" data-edit="text" data-minwidth="150" class=""><div class="layui-table-cell laytable-cell-1-0-3">xianxin@layui.com</div></td><td data-field="sex" data-key="1-0-4" data-content="男" class=""><div class="layui-table-cell laytable-cell-1-0-4"> <!-- 这里的 checked 的状态只是演示 --> <input type="checkbox" name="sex" value="10006" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>男</em><i></i></div> </div></td><td data-field="city" data-key="1-0-5" data-edit="text" data-minwidth="100" class=""><div class="layui-table-cell laytable-cell-1-0-5">浙江杭州</div></td><td data-field="experience" data-key="1-0-6" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-6">12</div></td><td data-field="dw_xinzhi" data-key="1-0-7" data-content="[object Object]" class=""><div class="layui-table-cell laytable-cell-1-0-7">小学</div></td></tr><tr data-index="6"><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="id" data-key="1-0-1" class=""><div class="layui-table-cell laytable-cell-1-0-1">10007</div></td><td data-field="username" data-key="1-0-2" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-2">贤心</div></td><td data-field="email" data-key="1-0-3" data-edit="text" data-minwidth="150" class=""><div class="layui-table-cell laytable-cell-1-0-3">xianxin@layui.com</div></td><td data-field="sex" data-key="1-0-4" data-content="男" class=""><div class="layui-table-cell laytable-cell-1-0-4"> <!-- 这里的 checked 的状态只是演示 --> <input type="checkbox" name="sex" value="10007" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>男</em><i></i></div> </div></td><td data-field="city" data-key="1-0-5" data-edit="text" data-minwidth="100" class=""><div class="layui-table-cell laytable-cell-1-0-5">浙江杭州</div></td><td data-field="experience" data-key="1-0-6" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-6">16</div></td><td data-field="dw_xinzhi" data-key="1-0-7" data-content="[object Object]" class=""><div class="layui-table-cell laytable-cell-1-0-7">小学</div></td></tr><tr data-index="7"><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="id" data-key="1-0-1" class=""><div class="layui-table-cell laytable-cell-1-0-1">10008</div></td><td data-field="username" data-key="1-0-2" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-2">贤心</div></td><td data-field="email" data-key="1-0-3" data-edit="text" data-minwidth="150" class=""><div class="layui-table-cell laytable-cell-1-0-3">xianxin@layui.com</div></td><td data-field="sex" data-key="1-0-4" data-content="男" class=""><div class="layui-table-cell laytable-cell-1-0-4"> <!-- 这里的 checked 的状态只是演示 --> <input type="checkbox" name="sex" value="10008" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>男</em><i></i></div> </div></td><td data-field="city" data-key="1-0-5" data-edit="text" data-minwidth="100" class=""><div class="layui-table-cell laytable-cell-1-0-5">浙江杭州</div></td><td data-field="experience" data-key="1-0-6" data-edit="text" class=""><div class="layui-table-cell laytable-cell-1-0-6">106</div></td><td data-field="dw_xinzhi" data-key="1-0-7" data-content="[object Object]" class=""><div class="layui-table-cell laytable-cell-1-0-7">小学</div></td></tr></tbody></table></div></div><div class="layui-table-page"><div id="layui-table-page1"><div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1"><a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0"><i class="layui-icon"></i></a><span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span><a href="javascript:;" data-page="2">2</a><a href="javascript:;" data-page="3">3</a><span class="layui-laypage-spr">…</span><a href="javascript:;" class="layui-laypage-last" title="尾页" data-page="300000">300000</a><a href="javascript:;" class="layui-laypage-next" data-page="2"><i class="layui-icon"></i></a><span class="layui-laypage-skip">到第<input type="text" min="1" value="1" class="layui-input">页<button type="button" class="layui-laypage-btn">确定</button></span><span class="layui-laypage-count">共 3000000 条</span><span class="layui-laypage-limits"><select lay-ignore=""><option value="10" selected="">10 条/页</option><option value="20">20 条/页</option><option value="30">30 条/页</option><option value="40">40 条/页</option><option value="50">50 条/页</option><option value="60">60 条/页</option><option value="70">70 条/页</option><option value="80">80 条/页</option><option value="90">90 条/页</option></select></span></div></div></div><style>.laytable-cell-1-0-0{ width: 48px; }.laytable-cell-1-0-1{ width: 80px; }.laytable-cell-1-0-2{ width: 120px; }.laytable-cell-1-0-3{  }.laytable-cell-1-0-4{ width: 80px; }.laytable-cell-1-0-5{  }.laytable-cell-1-0-6{  }.laytable-cell-1-0-7{  }</style></div>
+
+    </div>
+    <script type="text/html" id="toolbarDemo">
+      <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+        <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+      </div>
+    </script>
+    <script type="text/html" id="switchTpl">
+      <!-- 这里的 checked 的状态只是演示 -->
+      <input type="checkbox" name="sex" value="{{d.id}}" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo" {{ d.id == 10003 ? 'checked' : '' }}>
+    </script>
+    <script>
+      layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        
+        //执行一个laydate实例
+        laydate.render({
+          elem: '#start' //指定元素
+        });
+
+        //执行一个laydate实例
+        laydate.render({
+          elem: '#end' //指定元素
+        });
+
+
+      });
+    </script>
+    <script>
+    layui.use('table', function(){
+      var table = layui.table;
+      
+      //监听单元格编辑
+      table.on('edit(test)', function(obj){
+        var value = obj.value //得到修改后的值
+        ,data = obj.data //得到所在行所有键值
+        ,field = obj.field; //得到字段
+        layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+      });
+
+      //头工具栏事件
+      table.on('toolbar(test)', function(obj){
+        var checkStatus = table.checkStatus(obj.config.id);
+        switch(obj.event){
+          case 'getCheckData':
+            var data = checkStatus.data;
+            layer.alert(JSON.stringify(data));
+          break;
+          case 'getCheckLength':
+            var data = checkStatus.data;
+            layer.msg('选中了：'+ data.length + ' 个');
+          break;
+          case 'isAll':
+            layer.msg(checkStatus.isAll ? '全选': '未全选');
+          break;
+        };
+      });
+    });
+    </script>
+    <script>var _hmt = _hmt || []; (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();</script>
+  
+
+</body>
